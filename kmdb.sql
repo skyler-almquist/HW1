@@ -151,7 +151,8 @@ CREATE TABLE movies (
     Movie_Name TEXT, 
     MPAA_Rating TEXT,
     studios_id INTEGER,
-    hollywoodpeople_id INTEGER
+    hollywoodpeople_id INTEGER,
+    characters_id INTEGER
 );
 
 CREATE TABLE characters (
@@ -164,29 +165,67 @@ INSERT INTO studios (Studio_name)
 VALUES ("Warner Bros.");
 INSERT INTO hollywoodpeople (First_Name, Last_Name)
 VALUES ("Christian", "Bale");
+-- hollywoodpeople #1 
 INSERT INTO hollywoodpeople (First_Name, Last_Name)
 VALUES ("Michael", "Cain");
+-- hollywoodpeople #2 
 INSERT INTO hollywoodpeople (First_Name, Last_Name)
 VALUES ("Liam", "Neeson");
+-- hollywoodpeople #3 
 INSERT INTO hollywoodpeople (First_Name, Last_Name)
 VALUES ("Katie", "Holmes");
+-- hollywoodpeople #4 
 INSERT INTO hollywoodpeople (First_Name, Last_Name)
 VALUES ("Gary", "Oldman");
+-- hollywoodpeople #5 
 INSERT INTO hollywoodpeople (First_Name, Last_Name)
 VALUES ("Heath", "Ledger");
+-- hollywoodpeople #6 
 INSERT INTO hollywoodpeople (First_Name, Last_Name)
 VALUES ("Aaron", "Eckhart");
+-- hollywoodpeople #7 
 INSERT INTO hollywoodpeople (First_Name, Last_Name)
 VALUES ("Maggie", "Gyllenhaal");
+-- hollywoodpeople #8 
 INSERT INTO hollywoodpeople (First_Name, Last_Name)
 VALUES ("Tom", "Hardy");
+-- hollywoodpeople #9 
 INSERT INTO hollywoodpeople (First_Name, Last_Name)
 VALUES ("Joseph", "Gordan-Levitt");
+-- hollywoodpeople #10 
 INSERT INTO hollywoodpeople (First_Name, Last_Name)
 VALUES ("Anne", "Hathaway");
+-- hollywoodpeople #11 
 INSERT INTO movies (Movie_Name, MPAA_Rating, studios_id)
 VALUES ("Batman Begins", "PG-13",1);
 INSERT INTO movies (Movie_Name, MPAA_Rating, studios_id)
 VALUES ("The Dark Knight", "PG-13",1);
 INSERT INTO movies (Movie_Name, MPAA_Rating, studios_id)
 VALUES ("The Dark Knight Rises", "PG-13",1);
+--CREATE TABLE characters (
+    --id INTEGER PRIMARY KEY AUTOINCREMENT,
+    --Character_name TEXT, 
+    --hollywoodpeople_id INTEGER,
+    --movies_id INTEGER
+INSERT INTO characters (Character_name, hollywoodpeople_id)
+VALUES ("Bruce Wayne", 1);
+INSERT INTO characters (Character_name, hollywoodpeople_id)
+VALUES ("Alfred", 2);
+INSERT INTO characters (Character_name, hollywoodpeople_id)
+VALUES ("Ra's Al Ghul", 3);
+INSERT INTO characters (Character_name, hollywoodpeople_id)
+VALUES ("Rachel Dawes", 4);
+INSERT INTO characters (Character_name, hollywoodpeople_id)
+VALUES ("Commissioner Gordon", 5);
+INSERT INTO characters (Character_name, hollywoodpeople_id)
+VALUES ("The Joker", 6);
+INSERT INTO characters (Character_name, hollywoodpeople_id)
+VALUES ("Harvey Dent / Two-Face", 7);
+INSERT INTO characters (Character_name, hollywoodpeople_id)
+VALUES ("Rachel Dawes", 8);
+INSERT INTO characters (Character_name, hollywoodpeople_id)
+VALUES ("Bane", 9);
+INSERT INTO characters (Character_name, hollywoodpeople_id)
+VALUES ("John Blake / Robin", 10);
+INSERT INTO characters (Character_name, hollywoodpeople_id)
+VALUES ("Selina Kyle", 11);
