@@ -149,7 +149,7 @@ CREATE TABLE studios (
 CREATE TABLE movies (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     Movie_Name TEXT, 
-    MPAA_Rating TEXT
+    MPAA_Rating TEXT,
     studios_id INTEGER,
     hollywoodpeople_id INTEGER
 );
@@ -160,3 +160,33 @@ CREATE TABLE characters (
     hollywoodpeople_id INTEGER,
     movies_id INTEGER
 );
+INSERT INTO studios (Studio_name)
+VALUES ("Warner Bros.");
+INSERT INTO hollywoodpeople (First_Name, Last_Name)
+VALUES ("Christian", "Bale");
+INSERT INTO hollywoodpeople (First_Name, Last_Name)
+VALUES ("Michael", "Cain");
+INSERT INTO hollywoodpeople (First_Name, Last_Name)
+VALUES ("Liam", "Neeson");
+INSERT INTO hollywoodpeople (First_Name, Last_Name)
+VALUES ("Katie", "Holmes");
+INSERT INTO hollywoodpeople (First_Name, Last_Name)
+VALUES ("Gary", "Oldman");
+INSERT INTO hollywoodpeople (First_Name, Last_Name)
+VALUES ("Heath", "Ledger");
+INSERT INTO hollywoodpeople (First_Name, Last_Name)
+VALUES ("Aaron", "Eckhart");
+INSERT INTO hollywoodpeople (First_Name, Last_Name)
+VALUES ("Maggie", "Gyllenhaal");
+INSERT INTO hollywoodpeople (First_Name, Last_Name)
+VALUES ("Tom", "Hardy");
+INSERT INTO hollywoodpeople (First_Name, Last_Name)
+VALUES ("Joseph", "Gordan-Levitt");
+INSERT INTO hollywoodpeople (First_Name, Last_Name)
+VALUES ("Anne", "Hathaway");
+INSERT INTO movies (Movie_Name, MPAA_Rating, studios_id)
+VALUES ("Batman Begins", "PG-13",1);
+INSERT INTO movies (Movie_Name, MPAA_Rating, studios_id)
+VALUES ("The Dark Knight", "PG-13",1);
+INSERT INTO movies (Movie_Name, MPAA_Rating, studios_id)
+VALUES ("The Dark Knight Rises", "PG-13",1);
