@@ -132,8 +132,7 @@ DROP TABLE IF EXISTS characters;
 
 CREATE TABLE hollywoodpeople (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    First_Name TEXT, 
-    Last_Name TEXT
+    Whole_Name TEXT
 );
 
 CREATE TABLE studios (
@@ -160,38 +159,38 @@ CREATE TABLE characters (
 
 INSERT INTO studios (Studio_name)
 VALUES ("Warner Bros.");
-INSERT INTO hollywoodpeople (First_Name, Last_Name)
-VALUES ("Christian", "Bale");
+INSERT INTO hollywoodpeople (Whole_Name)
+VALUES ("Christian Bale");
 -- hollywoodpeople #1 
-INSERT INTO hollywoodpeople (First_Name, Last_Name)
-VALUES ("Michael", "Cain");
+INSERT INTO hollywoodpeople (Whole_Name)
+VALUES ("Michael Cain");
 -- hollywoodpeople #2 
-INSERT INTO hollywoodpeople (First_Name, Last_Name)
-VALUES ("Liam", "Neeson");
+INSERT INTO hollywoodpeople (Whole_Name)
+VALUES ("Liam Neeson");
 -- hollywoodpeople #3 
-INSERT INTO hollywoodpeople (First_Name, Last_Name)
-VALUES ("Katie", "Holmes");
+INSERT INTO hollywoodpeople (Whole_Name)
+VALUES ("Katie Holmes");
 -- hollywoodpeople #4 
-INSERT INTO hollywoodpeople (First_Name, Last_Name)
-VALUES ("Gary", "Oldman");
+INSERT INTO hollywoodpeople (Whole_Name)
+VALUES ("Gary Oldman");
 -- hollywoodpeople #5 
-INSERT INTO hollywoodpeople (First_Name, Last_Name)
-VALUES ("Heath", "Ledger");
+INSERT INTO hollywoodpeople (Whole_Name)
+VALUES ("Heath Ledger");
 -- hollywoodpeople #6 
-INSERT INTO hollywoodpeople (First_Name, Last_Name)
-VALUES ("Aaron", "Eckhart");
+INSERT INTO hollywoodpeople (Whole_Name)
+VALUES ("Aaron Eckhart");
 -- hollywoodpeople #7 
-INSERT INTO hollywoodpeople (First_Name, Last_Name)
-VALUES ("Maggie", "Gyllenhaal");
+INSERT INTO hollywoodpeople (Whole_Name)
+VALUES ("Maggie Gyllenhaal");
 -- hollywoodpeople #8 
-INSERT INTO hollywoodpeople (First_Name, Last_Name)
-VALUES ("Tom", "Hardy");
+INSERT INTO hollywoodpeople (Whole_Name)
+VALUES ("Tom Hardy");
 -- hollywoodpeople #9 
-INSERT INTO hollywoodpeople (First_Name, Last_Name)
-VALUES ("Joseph", "Gordan-Levitt");
+INSERT INTO hollywoodpeople (Whole_Name)
+VALUES ("Joseph Gordan-Levitt");
 -- hollywoodpeople #10 
-INSERT INTO hollywoodpeople (First_Name, Last_Name)
-VALUES ("Anne", "Hathaway");
+INSERT INTO hollywoodpeople (Whole_Name)
+VALUES ("Anne Hathaway");
 -- hollywoodpeople #11 
 INSERT INTO movies (Movie_Name, MPAA_Rating, studios_id, year_release)
 VALUES ("Batman Begins", "PG-13",1, "2005");
@@ -238,7 +237,6 @@ VALUES ("Selina Kyle", 11, 3);
 .print "Movies"
 .print ""
 SELECT Movie_Name, year_release, MPAA_Rating, studios_id FROM movies;
-SELECT Studio_name from studios;
 .print ""
 .print "======"
 .print ""
@@ -246,7 +244,7 @@ SELECT Studio_name from studios;
 .print ""
 .print "Top Cast"
 .print ""
-SELECT First_Name, Last_Name FROM hollywoodpeople;
+SELECT Whole_Name FROM hollywoodpeople;
 .print ""
 .print "========"
 .print ""
