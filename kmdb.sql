@@ -236,7 +236,7 @@ VALUES ("Selina Kyle", 11, 3);
 
 .print "Movies"
 .print ""
-SELECT Movie_Name, year_release, MPAA_Rating, studios_id FROM movies;
+SELECT Movie_Name, year_release, MPAA_Rating, Studio_name FROM movies, studios;
 .print ""
 .print "======"
 .print ""
@@ -244,7 +244,8 @@ SELECT Movie_Name, year_release, MPAA_Rating, studios_id FROM movies;
 .print ""
 .print "Top Cast"
 .print ""
-SELECT Whole_Name FROM hollywoodpeople;
+SELECT Movie_Name, Whole_Name, Character_name FROM movies, hollywoodpeople, characters;
 .print ""
 .print "========"
 .print ""
+
