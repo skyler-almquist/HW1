@@ -157,6 +157,25 @@ CREATE TABLE characters (
     movies_id INTEGER
 );
 
+CREATE TABLE bb (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    hollywoodpeople_id INTEGER,
+    characters_id INTEGER, 
+    movies_id INTEGER
+);
+CREATE TABLE tdk (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    hollywoodpeople_id INTEGER,
+    characters_id INTEGER,
+    movies_id INTEGER
+);
+CREATE TABLE tdkr (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    hollywoodpeople_id INTEGER,
+    characters_id INTEGER,
+    movies_id INTEGER
+);
+
 INSERT INTO studios (Studio_name)
 VALUES ("Warner Bros.");
 INSERT INTO hollywoodpeople (Whole_Name)
@@ -198,28 +217,17 @@ INSERT INTO movies (Movie_Name, MPAA_Rating, studios_id, year_release)
 VALUES ("The Dark Knight", "PG-13",1, "2008");
 INSERT INTO movies (Movie_Name, MPAA_Rating, studios_id, year_release)
 VALUES ("The Dark Knight Rises", "PG-13",1, "2012");
-INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
-VALUES ("Bruce Wayne", 1, 1);
-INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
-VALUES ("Bruce Wayne", 1, 2);
-INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
-VALUES ("Bruce Wayne", 1, 3);
-INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
-VALUES ("Alfred", 2, 1);
-INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
-VALUES ("Alfred", 2, 2);
-INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
-VALUES ("Alfred", 2, 3);
+INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id, movies_id, movies_id)
+VALUES ("Bruce Wayne", 1, 1, 2, 3);
+
+INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id, movies_id, movies_id)
+VALUES ("Alfred", 2, 1, 2, 3);
 INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
 VALUES ("Ra's Al Ghul", 3, 1);
 INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
 VALUES ("Rachel Dawes", 4, 1);
-INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
-VALUES ("Commissioner Gordon", 5, 1);
-INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
-VALUES ("Commissioner Gordon", 5, 2);
-INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
-VALUES ("Commissioner Gordon", 5, 3);
+INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id, movies_id, movies_id)
+VALUES ("Commissioner Gordon", 5, 1, 2, 3);
 INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
 VALUES ("The Joker", 6, 2);
 INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
@@ -232,6 +240,13 @@ INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
 VALUES ("John Blake / Robin", 10, 3);
 INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
 VALUES ("Selina Kyle", 11, 3);
+INSERT INTO bb  (hollywoodpeople_id, characters_id, movies_id)
+VALUES (1, 1, 1);
+INSERT INTO bb  (hollywoodpeople_id, characters_id, movies_id)
+VALUES (1, 1, 1);
+INSERT INTO bb  (hollywoodpeople_id, characters_id, movies_id)
+VALUES (1, 1, 1);
+
 
 
 .print "Movies"
