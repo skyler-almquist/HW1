@@ -114,18 +114,13 @@
 -- TODO!
 
 -- Prints a header for the movies output
-.print "Movies"
-.print "======"
-.print ""
+
 
 -- The SQL statement for the movies output
 -- TODO!
 
 -- Prints a header for the cast output
-.print ""
-.print "Top Cast"
-.print "========"
-.print ""
+
 
 -- The SQL statement for the cast output
 -- TODO!
@@ -151,6 +146,7 @@ CREATE TABLE movies (
     Movie_Name TEXT, 
     MPAA_Rating TEXT,
     studios_id INTEGER,
+    year_release TEXT,
     hollywoodpeople_id INTEGER,
     characters_id INTEGER
 );
@@ -197,12 +193,12 @@ VALUES ("Joseph", "Gordan-Levitt");
 INSERT INTO hollywoodpeople (First_Name, Last_Name)
 VALUES ("Anne", "Hathaway");
 -- hollywoodpeople #11 
-INSERT INTO movies (Movie_Name, MPAA_Rating, studios_id)
-VALUES ("Batman Begins", "PG-13",1);
-INSERT INTO movies (Movie_Name, MPAA_Rating, studios_id)
-VALUES ("The Dark Knight", "PG-13",1);
-INSERT INTO movies (Movie_Name, MPAA_Rating, studios_id)
-VALUES ("The Dark Knight Rises", "PG-13",1);
+INSERT INTO movies (Movie_Name, MPAA_Rating, studios_id, year_release)
+VALUES ("Batman Begins", "PG-13",1, "2005");
+INSERT INTO movies (Movie_Name, MPAA_Rating, studios_id, year_release)
+VALUES ("The Dark Knight", "PG-13",1, "2008");
+INSERT INTO movies (Movie_Name, MPAA_Rating, studios_id, year_release)
+VALUES ("The Dark Knight Rises", "PG-13",1, "2012");
 INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
 VALUES ("Bruce Wayne", 1, 1);
 INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
@@ -237,3 +233,20 @@ INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
 VALUES ("John Blake / Robin", 10, 3);
 INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
 VALUES ("Selina Kyle", 11, 3);
+
+
+.print "Movies"
+.print ""
+SELECT Movie_Name, year_release, MPAA_Rating, studios_id FROM movies;
+SELECT Studio_name from studios;
+.print ""
+.print "======"
+.print ""
+
+.print ""
+.print "Top Cast"
+.print ""
+SELECT First_Name, Last_Name FROM hollywoodpeople;
+.print ""
+.print "========"
+.print ""
