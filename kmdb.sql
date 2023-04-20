@@ -139,23 +139,24 @@ CREATE TABLE hollywoodpeople (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     First_Name TEXT, 
     Last_Name TEXT
-)
+);
 
 CREATE TABLE studios (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     Studio_name TEXT
-)
+);
 
 CREATE TABLE movies (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     Movie_Name TEXT, 
     MPAA_Rating TEXT
-    studios_id INTEGER
-)
+    studios_id INTEGER,
+    hollywoodpeople_id INTEGER
+);
 
 CREATE TABLE characters (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     Character_name TEXT, 
     hollywoodpeople_id INTEGER,
     movies_id INTEGER
-)
+);
