@@ -127,6 +127,35 @@
 .print "========"
 .print ""
 
-
 -- The SQL statement for the cast output
 -- TODO!
+
+DROP TABLE IF EXISTS hollywoodpeople;
+DROP TABLE IF EXISTS studios;
+DROP TABLE IF EXISTS movies;
+DROP TABLE IF EXISTS characters;
+
+CREATE TABLE hollywoodpeople (
+    id iNTEGER PRIMARY KEY AUTOINCREMENT,
+    First_Name TEXT, 
+    Last_Name TEXT
+)
+
+CREATE TABLE studios (
+    id iNTEGER PRIMARY KEY AUTOINCREMENT,
+    Studio_name TEXT
+)
+
+CREATE TABLE movies (
+    id iNTEGER PRIMARY KEY AUTOINCREMENT,
+    Movie_Name TEXT, 
+    MPAA_Rating TEXT
+    studios_id INTEGER
+)
+
+CREATE TABLE characters (
+    id iNTEGER PRIMARY KEY AUTOINCREMENT,
+    Character_name TEXT, 
+    hollywoodpeople_id INTEGER,
+    movies_id iNTEGER
+)
