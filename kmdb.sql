@@ -147,7 +147,8 @@ CREATE TABLE movies (
     MPAA_Rating TEXT,
     studios_id INTEGER,
     year_release TEXT,
-    hollywoodpeople_id INTEGER
+    hollywoodpeople_id INTEGER,
+    characters_id INTEGER
 );
 
 CREATE TABLE characters (
@@ -202,29 +203,49 @@ INSERT INTO movies (Movie_Name, MPAA_Rating, studios_id, year_release)
 VALUES ("The Dark Knight", "PG-13",1, "2008");
 INSERT INTO movies (Movie_Name, MPAA_Rating, studios_id, year_release)
 VALUES ("The Dark Knight Rises", "PG-13",1, "2012");
-INSERT INTO characters (Character_name, hollywoodpeople_id)
-VALUES ("Bruce Wayne", 1);
 
-INSERT INTO characters (Character_name, hollywoodpeople_id)
-VALUES ("Alfred", 2);
-INSERT INTO characters (Character_name, hollywoodpeople_id)
-VALUES ("Ra's Al Ghul", 3);
-INSERT INTO characters (Character_name, hollywoodpeople_id)
-VALUES ("Rachel Dawes", 4);
-INSERT INTO characters (Character_name, hollywoodpeople_id)
-VALUES ("Commissioner Gordon", 5);
-INSERT INTO characters (Character_name, hollywoodpeople_id)
-VALUES ("The Joker", 6);
-INSERT INTO characters (Character_name, hollywoodpeople_id)
-VALUES ("Harvey Dent / Two-Face", 7);
-INSERT INTO characters (Character_name, hollywoodpeople_id)
-VALUES ("Rachel Dawes", 8);
-INSERT INTO characters (Character_name, hollywoodpeople_id)
-VALUES ("Bane", 9);
-INSERT INTO characters (Character_name, hollywoodpeople_id)
-VALUES ("John Blake / Robin", 10);
-INSERT INTO characters (Character_name, hollywoodpeople_id)
-VALUES ("Selina Kyle", 11);
+INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
+VALUES ("Bruce Wayne", 1, 1);
+INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
+VALUES ("Bruce Wayne", 1, 2);
+INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
+VALUES ("Bruce Wayne", 1, 3);
+
+INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
+VALUES ("Alfred", 2, 1);
+INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
+VALUES ("Alfred", 2, 2);
+INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
+VALUES ("Alfred", 2, 3);
+
+INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
+VALUES ("Ra's Al Ghul", 3,1);
+
+INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
+VALUES ("Rachel Dawes", 4, 1);
+
+INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
+VALUES ("Commissioner Gordon", 5, 1);
+INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
+VALUES ("Commissioner Gordon", 5, 2);
+INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
+VALUES ("Commissioner Gordon", 5, 3);
+
+INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
+VALUES ("The Joker", 6, 1);
+
+INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
+VALUES ("Harvey Dent / Two-Face", 7, 2);
+
+INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
+VALUES ("Rachel Dawes", 8, 2);
+
+INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
+VALUES ("Bane", 9, 3);
+INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
+VALUES ("John Blake / Robin", 10, 3);
+INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
+VALUES ("Selina Kyle", 11, 3);
 
 
 .print "Movies"
@@ -237,8 +258,10 @@ SELECT Movie_Name, year_release, MPAA_Rating, Studio_name FROM movies, studios;
 .print ""
 .print "Top Cast"
 .print ""
-SELECT Movie_Name, Whole_Name, Character_name FROM movies, hollywoodpeople, characters;
+
+SELECT movies.Movie_Name, hollywoodpeople.Whole_Name, characters.Character_name
+FROM movies INNER JOIN characters on (movies.id = characters.movies_id) INNER JOIN hollywoodpeople on (hollywoodpeople.id = characters.hollywoodpeople_id) ORDER BY Movie_Name;
+
 .print ""
 .print "========"
 .print ""
-
