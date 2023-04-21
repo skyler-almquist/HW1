@@ -232,7 +232,7 @@ INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
 VALUES ("Commissioner Gordon", 5, 3);
 
 INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
-VALUES ("The Joker", 6, 1);
+VALUES ("The Joker", 6, 2);
 
 INSERT INTO characters (Character_name, hollywoodpeople_id, movies_id)
 VALUES ("Harvey Dent / Two-Face", 7, 2);
